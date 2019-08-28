@@ -14,8 +14,8 @@ def main():
         print(f"[{phase} : X]")
         file_x = h5py.File(f"camelyonpatch_level_2_split_{phase}_x.h5")
         data_x = file_x['x']
-        #for idx, img in tqdm(enumerate(data_x)):
-        #    cv2.imwrite(f"{phase}/x/{idx:06}.png", cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
+        for idx, img in tqdm(enumerate(data_x)):
+            cv2.imwrite(f"{phase}/x/{idx:06}.png", cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
 
         print(f"[{phase} : Y]")
         file_y = h5py.File(f"camelyonpatch_level_2_split_{phase}_y.h5")
